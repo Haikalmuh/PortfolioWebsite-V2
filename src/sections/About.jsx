@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Card from "../components/Card";
 import { Globe } from "../components/globe";
 import CopyEmailButton from "../components/CopyEmailButton";
-import { Frameworks } from "../components/FrameWorks";
+import { Frameworks } from "../components/Frameworks";
 
 const About = () => {
   const grid2Container = useRef();
@@ -17,10 +17,12 @@ const About = () => {
             className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
           />
           <div className="z-10">
-            <p className="headtext">Hi, I'm Ali Sanati</p>
+            <p className="headtext">Hi, I'm Muhammad Haikal</p>
             <p className="subtext">
-              Over the last 4 years, I developed my frontend and backend dev
-              skills to deliver dynamic and software and web applications.
+              As a Frontend Developer, I design modern, user-friendly interfaces
+              blending creativity and technology. Using React, Next.js,
+              Typescript, and JavaScript, I transform concepts into digital
+              experiences that inspire, engage, and connect people worldwide.
             </p>
           </div>
           <div className="absolute inset-x-0 pointer-evets-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
@@ -36,43 +38,64 @@ const About = () => {
             </p>
             <Card
               style={{ rotate: "75deg", top: "30%", left: "20%" }}
-              text="GRASP"
+              text="Frontend"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "-30deg", top: "60%", left: "45%" }}
-              text="SOLID"
+              text="UI/UX"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "90deg", bottom: "30%", left: "70%" }}
-              text="Design Patterns"
+              text="Design Thinking"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "-45deg", top: "55%", left: "0%" }}
-              text="Design Principles"
+              text="Interactive"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "20deg", top: "10%", left: "38%" }}
-              text="SRP"
+              text="Creative"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "30deg", top: "70%", left: "70%" }}
-              image="assets/logos/csharp-pink.png"
+              image="assets/logos/react.png"
               containerRef={grid2Container}
+              size="w-12 sm:w-16 md:w-20 lg:w-24"
             />
             <Card
               style={{ rotate: "-45deg", top: "70%", left: "25%" }}
-              image="assets/logos/dotnet-pink.png"
+              image="assets/logos/nextjs.png"
               containerRef={grid2Container}
+              size="w-12 sm:w-16 md:w-20 lg:w-24"
             />
             <Card
-              style={{ rotate: "-45deg", top: "5%", left: "10%" }}
-              image="assets/logos/blazor-pink.png"
+              style={{ rotate: "-70deg", top: "70%", left: "55%" }}
+              image="assets/logos/javascript.png"
               containerRef={grid2Container}
+              size="w-12 sm:w-16 md:w-20 lg:w-24"
+            />
+            <Card
+              style={{ rotate: "-70deg", top: "70%", left: "40%" }}
+              image="assets/logos/figma.svg"
+              containerRef={grid2Container}
+              size="w-12 sm:w-16 md:w-20 lg:w-24"
+            />
+            <Card
+              style={{ rotate: "-70deg", top: "50%", left: "5%" }}
+              image="assets/logos/typescripts.png"
+              containerRef={grid2Container}
+              size="w-12 sm:w-16 md:w-20 lg:w-24"
+            />
+            <Card
+              style={{ rotate: "-60deg", top: "70%", left: "10%" }}
+              image="assets/logos/tailwind.png"
+              containerRef={grid2Container}
+              size="w-12 sm:w-16 md:w-20 lg:w-24"
             />
           </div>
         </div>
@@ -81,7 +104,8 @@ const About = () => {
           <div className="z-10 w-[50%]">
             <p className="headtext">Time Zone</p>
             <p className="subtext">
-              I'm based in Mars, and open to remote work worldwide
+              I am based in Sukoharjo, Central Java - Indonesia, and I am open
+              to freelance or remote work.
             </p>
           </div>
           <figure className="absolute left-[30%] top-[10%]">
@@ -100,10 +124,11 @@ const About = () => {
         {/* Grid 5 */}
         <div className="grid-default-color grid-5">
           <div className="z-10 w-[50%]">
-            <p className="headText">Teck Stack</p>
+            <p className="headText">Tech Stack</p>
             <p className="subtext">
-              I specialize in a variety of languages, frameworks, and tools taht
-              allow me to build robust and scalable applications
+              I utilize various languages, frameworks, and tools in my projects,
+              and I am committed to continuously learning and growing my
+              expertise.
             </p>
           </div>
           <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
