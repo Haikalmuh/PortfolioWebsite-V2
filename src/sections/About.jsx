@@ -3,6 +3,7 @@ import Card from "../components/Card";
 import { Globe } from "../components/globe";
 import CopyEmailButton from "../components/CopyEmailButton";
 import { Frameworks } from "../components/Frameworks";
+import GithubContribution from "../components/GithubContribution";
 
 const About = () => {
   const grid2Container = useRef();
@@ -135,6 +136,10 @@ const About = () => {
             <Frameworks />
           </div>
         </div>
+        {/* Grid 6 - GitHub Contribution */}
+        <div className="col-span-full">
+    <GithubContribution />
+  </div>
       </div>
     </section>
   );
