@@ -1,102 +1,53 @@
-import { FlipWords } from "./FlipWords";
 import { motion } from "motion/react";
+import { FlipWords } from "./FlipWords";
 
-const HeroText = () => {
+const HeroTextV1 = () => {
   const words = ["Secure", "Modern", "Scalable"];
-  const variants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-  };
+
   return (
-    <div className="z-10 mt-20 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text">
-      {/* Desktop View */}
-      <div className="flex-col hidden md:flex c-space">
-        <motion.h1
-          className="text-4xl font-medium"
-          variants={variants}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 1 }}
-        >
-          Hi I'm Haikal
-        </motion.h1>
-        <div className="flex flex-col items-start">
-          <motion.p
-            className="text-5xl font-medium text-neutral-300"
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 1.2 }}
-          >
-            A Developer <br /> Dedicated to Crafting
-          </motion.p>
-          <motion.div
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 1.5 }}
-          >
-            <FlipWords
-              words={words}
-              className="font-black text-white text-8xl"
-            />
-          </motion.div>
-          <motion.p
-            className="text-4xl font-medium text-neutral-300"
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 1.8 }}
-          >
-            Web Solutions
-          </motion.p>
-        </div>
-      </div>
-      {/* Mobile View */}
-      <div className="flex- flex-col space-y-6 md:hidden">
-        <motion.p
-          className="text-4xl font-medium"
-          variants={variants}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 1 }}
-        >
-          Hi,I'm Haikal
-        </motion.p>
-        <div>
-          <motion.p
-            className="text-5xl font-black text-neutral-300"
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 1.2 }}
-          >
-            Building
-          </motion.p>
-          <motion.div
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 1.5 }}
-          >
-            <FlipWords
-              words={words}
-              className="font-bold text-white text-7xl"
-            />
-          </motion.div>
-          <motion.p
-            className="text-4xl font-black text-neutral300"
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 1.8 }}
-          >
-            Web Applications
-          </motion.p>
-        </div>
-      </div>
+    <div className="z-10 mt-20 text-center md:mt-40 md:text-left">
+      {/* Greeting */}
+      <motion.h1
+        className="text-2xl font-medium text-neutral-300"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+      >
+        Hi, I'm Haikal
+      </motion.h1>
+
+      {/* Main headline */}
+      <motion.h2
+        className="mt-4 text-4xl font-bold text-white md:text-6xl leading-tight"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+      >
+        Building <span className="text-lavender">Modern</span> <br />
+        Web Experiences
+      </motion.h2>
+
+      {/* Dynamic words */}
+      <motion.div
+        className="mt-4 text-3xl font-black md:text-5xl"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6 }}
+      >
+        <FlipWords words={words} className="text-white" />
+      </motion.div>
+
+      {/* Subtitle */}
+      <motion.p
+        className="mt-6 text-lg text-neutral-400 md:text-xl"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+      >
+        Frontend Developer | Crafting user-friendly, scalable solutions
+      </motion.p>
     </div>
   );
 };
 
-export default HeroText;
+export default HeroTextV1;

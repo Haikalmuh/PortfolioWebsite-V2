@@ -1,48 +1,23 @@
-import { Canvas, useFrame } from "@react-three/fiber";
 import HeroText from "../components/HeroText";
 import ParallaxBackground from "../components/ParallaxBackground";
-import { Astronaut } from "../components/Astronaut";
-import { Float } from "@react-three/drei";
-import { useMediaQuery } from "react-responsive";
-import { easing } from "maath";
-import { Suspense } from "react";
-import Loader from "../components/Loader";
+import HeroPhoto from "../components/HeroPhoto";
 
 const Hero = () => {
-  const isMobile = useMediaQuery({ maxWidth: 853 });
   return (
-    <section className="flex items-start justify-center min-h-screen overflow-hidden md:items-start md:justify-start c-space">
-      <HeroText />
+    <section className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden px-6 text-center md:flex-row md:justify-between md:text-left md:px-16 lg:px-24" id="home">
       <ParallaxBackground />
-      <figure
-        className="absolute inset-0"
-        style={{ width: "100vw", height: "100vh" }}
-      >
-        <Canvas camera={{ position: [0, 1, 3] }}>
-          <Suspense fallback={<Loader />}>
-            <Float>
-              <Astronaut
-                scale={isMobile && 0.23}
-                position={isMobile && [0, -1.5, 0]}
-              />
-            </Float>
-            <Rig />
-          </Suspense>
-        </Canvas>
-      </figure>
+
+      {/* Photo (mobile atas, desktop kanan) */}
+      <div className="z-10 flex justify-center w-full mt-6 -translate-y-4 md:translate-y-0 md:mt-[-40] md:w-1/2 lg:w-2/5 md:order-2 md:justify-end order-1">
+        <HeroPhoto />
+      </div>
+
+      {/* Text (mobile bawah, desktop kiri agak naik) */}
+      <div className="z-10 flex flex-col items-center mt-6 md:mt-[-60px] md:items-start max-w-xl md:order-1 order-2">
+        <HeroText />
+      </div>
     </section>
   );
 };
-
-function Rig() {
-  return useFrame((state, delta) => {
-    easing.damp3(
-      state.camera.position,
-      [state.mouse.x / 10, 1 + state.mouse.y / 10, 3],
-      0.5,
-      delta
-    );
-  });
-}
 
 export default Hero;
